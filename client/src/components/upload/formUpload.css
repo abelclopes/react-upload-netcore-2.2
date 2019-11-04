@@ -1,0 +1,11 @@
+.formUpload {
+    border: 1rem solid #eeeeee;
+    width: 30%;
+    margin: 15% auto;
+}
+input {
+ margin: 5px 0 !important;
+}
+form {
+    margin: 10px;
+}
