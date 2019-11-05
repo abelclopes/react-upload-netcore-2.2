@@ -1,13 +1,12 @@
 import React from 'react'
-import "./formUpload.css"
+import "./uploadForm.css"
 
-export default class FormUpload extends React.Component {
+export default class UploadForm extends React.Component {
     constructor() {
         super();
         this.state = {
             image: '',
-            name: '',
-            doneShow: false,
+            name: ''
         }
     }
     handleFileChange = e => {
@@ -15,6 +14,13 @@ export default class FormUpload extends React.Component {
             [e.target.name]: e.target.files[0],
         })
     }
+    handleChange = (name, e) => {
+        console.log(e.target.value);
+        var change = {};
+        change[name] = e.target.value;
+        this.setState(change);
+    }
+
     handleSubmit = async e => {
         e.preventDefault();
 
@@ -34,14 +40,15 @@ export default class FormUpload extends React.Component {
         return (
             <div className="formUpload">
                 <h2>Form Upload</h2>
-                { this.state.doneShow ? <div>upload success</div> : "" }
+                {this.state.doneShow ? <div>upload success</div> : ""}
                 <form onSubmit={this.handleSubmit}>
                     <div className="col-12">
                         <input
                             placeholder="Name File"
                             className="form-control"
                             name="name"
-                            type="text" />
+                            type="text"
+                            onChange={this.handleChange.bind(this, 'name')} />
                     </div>
                     <div className="col-12">
                         <input
