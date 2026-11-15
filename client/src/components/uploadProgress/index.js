@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './uploadProgress.css'
 import Dropzone from '../dropzone/'
 import Progress from '../progress';
